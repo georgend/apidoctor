@@ -1422,6 +1422,14 @@ namespace ApiDoctor.Publishing.CSDL
                     Name = resource.Name.TypeOnly(),
                     Namespace = resource.Name.NamespaceOnly(),
                     OpenType = resource.OriginalMetadata.IsOpenType,
+                    Annotation = new List<Annotation>()
+                    {
+                        new()
+                        {
+                            Term = Term.DescriptionTerm,
+                            String = resource.Description
+                        }
+                    }
                 };
 
                 if (resource.ResolvedBaseTypeReference == null ||
@@ -1446,6 +1454,14 @@ namespace ApiDoctor.Publishing.CSDL
                     Name = resource.Name.TypeOnly(),
                     Namespace = resource.Name.NamespaceOnly(),
                     OpenType = resource.OriginalMetadata.IsOpenType,
+                    Annotation = new List<Annotation>()
+                    {
+                        new()
+                        {
+                            Term = Term.DescriptionTerm,
+                            String = resource.Description
+                        }
+                    }
                 };
 
                 schema.ComplexTypes.Add(type);
